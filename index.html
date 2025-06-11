@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alika Graham</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #000000;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHRleHQgeD0iMCIgeT0iMjQiIGZvbnQtc2l6ZT0iMjQiPvCfkYs8L3RleHQ+Cjwvc3ZnPg=='), auto;
+        }
+
+        #canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .typewriter {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #b0b0b0;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .typewriter span {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1.5rem;
+            background-color: #ffffff;
+            animation: blink 1s infinite;
+            margin-left: 2px;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            padding: 0.5rem 1rem;
+            border: 2px solid transparent;
+            border-radius: 30px;
+        }
+
+        .social-links a::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #00ffff, #ff00ff, #00ffff);
+            border-radius: 30px;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.3s ease;
+            animation: glowRotate 3s linear infinite;
+        }
+
+        @keyframes glowRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .social-links a:hover::before {
+            opacity: 1;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px) scale(1.05);
+            color: #ffffff;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+
+        .email {
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        .email:hover {
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .typewriter {
+                font-size: 1.2rem;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+
+            .social-links a {
+                font-size: 1rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <div class="container">
+        <h1>Alika Graham</h1>
+        <div class="typewriter">
+            <span id="typewriter-text"></span>
+            <span class="cursor"></span>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/alikagraham/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/alikagr" target="_blank">GitHub</a>
+            <a href="https://twitter.com/alika_graham" target="_blank">Twitter</a>
+            <a href="https://www.instagram.com/alika.graham/" target="_blank">Instagram</a>
+        </div>
+        
+        <a href="mailto:alika@alikagraham.com" class="email">alika@alikagraham.com</a>
+    </div>
+
+    <script>
+        // Typing animation
+        const phrases = [
+            "Software Engineer",
+            "Problem Solver",
+            "Creative Thinker",
+            "Tech Enthusiast",
+            "Lifelong Learner"
+        ];
+        
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typewriterElement = document.getElementById('typewriter-text');
+        
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            let typeSpeed = isDeleting ? 50 : 100;
+            
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typeSpeed = 500;
+            }
+            
+            setTimeout(type, typeSpeed);
+        }
+        
+        // Start typing animation
+        setTimeout(type, 1000);
+        
+        // Initialize WebGL
+        const canvas = document.getElementById('canvas');
+        const gl = canvas.getContext('webgl');
+        
+        if (!gl) {
+            console.error('WebGL not supported in your browser');
+        }
+        
+        // Vertex shader program
+        const vsSource = `
+            attribute vec4 aVertexPosition;
+            void main() {
+                gl_Position = aVertexPosition;
+            }
+        `;
+        
+        // Fragment shader program (updated for dark theme)
+        const fsSource = `
+            precision highp float;
+            uniform vec2 iResolution;
+            uniform float iTime;
+            
+            const float overallSpeed = 0.15;
+            const float gridSmoothWidth = 0.015;
+            const float axisWidth = 0.05;
+            const float majorLineWidth = 0.025;
+            const float minorLineWidth = 0.0125;
+            const float majorLineFrequency = 5.0;
+            const float minorLineFrequency = 1.0;
+            const vec4 gridColor = vec4(0.5);
+            const float scale = 5.0;
+            // Slightly brighter purple/blue with moderate alpha
+            const vec4 lineColor = vec4(0.25, 0.15, 0.4, 0.5);
+            // Lines are thinner now
+            const float minLineWidth = 0.008;
+            const float maxLineWidth = 0.12;
+            const float lineSpeed = 0.8 * overallSpeed;
+            const float lineAmplitude = 0.8;
+            const float lineFrequency = 0.2;
+            const float warpSpeed = 0.15 * overallSpeed;
+            const float warpFrequency = 0.5;
+            const float warpAmplitude = 0.6;
+            const float offsetFrequency = 0.5;
+            const float offsetSpeed = 1.0 * overallSpeed;
+            const float minOffsetSpread = 0.6;
+            const float maxOffsetSpread = 2.0;
+            const int linesPerGroup = 8;
+            
+            #define drawCircle(pos, radius, coord) smoothstep(radius + gridSmoothWidth, radius, length(coord - (pos)))
+            #define drawSmoothLine(pos, halfWidth, t) smoothstep(halfWidth, 0.0, abs(pos - (t)))
+            #define drawCrispLine(pos, halfWidth, t) smoothstep(halfWidth + gridSmoothWidth, halfWidth, abs(pos - (t)))
+            #define drawPeriodicLine(freq, width, t) drawCrispLine(freq / 2.0, width, abs(mod(t, freq) - (freq) / 2.0))
+            
+            float drawGridLines(float axis) {
+                return drawCrispLine(0.0, axisWidth, axis)
+                      + drawPeriodicLine(majorLineFrequency, majorLineWidth, axis)
+                      + drawPeriodicLine(minorLineFrequency, minorLineWidth, axis);
+            }
+            
+            float drawGrid(vec2 space) {
+                return min(1.0, drawGridLines(space.x) + drawGridLines(space.y));
+            }
+            
+            float random(float t) {
+                return (cos(t) + cos(t * 1.3 + 1.3) + cos(t * 1.4 + 1.4)) / 3.0;   
+            }
+            
+            float getPlasmaY(float x, float horizontalFade, float offset) {
+                return random(x * lineFrequency + iTime * lineSpeed) * horizontalFade * lineAmplitude + offset;
+            }
+            
+            void main() {
+                vec2 fragCoord = gl_FragCoord.xy;
+                vec4 fragColor;
+                
+                vec2 uv = fragCoord.xy / iResolution.xy;
+                vec2 space = (fragCoord - iResolution.xy / 2.0) / iResolution.x * 2.0 * scale;
+                
+                float horizontalFade = 1.0 - (cos(uv.x * 6.28) * 0.5 + 0.5);
+                float verticalFade = 1.0 - (cos(uv.y * 6.28) * 0.5 + 0.5);
+            
+                // Wind/turbulence effect
+                space.y += random(space.x * warpFrequency + iTime * warpSpeed) * warpAmplitude * (0.5 + horizontalFade);
+                space.x += random(space.y * warpFrequency + iTime * warpSpeed + 2.0) * warpAmplitude * horizontalFade;
+                
+                vec4 lines = vec4(0.0);
+                // Dark background with subtle blue/purple tint
+                vec4 bgColor1 = vec4(0.05, 0.05, 0.08, 1.0);
+                vec4 bgColor2 = vec4(0.08, 0.05, 0.1, 1.0);
+                
+                for(int l = 0; l < linesPerGroup; l++) {
+                    float normalizedLineIndex = float(l) / float(linesPerGroup);
+                    float offsetTime = iTime * offsetSpeed;
+                    float offsetPosition = float(l) + space.x * offsetFrequency;
+                    float rand = random(offsetPosition + offsetTime) * 0.5 + 0.5;
+                    float halfWidth = mix(minLineWidth, maxLineWidth, rand * horizontalFade) / 2.0;
+                    float offset = random(offsetPosition + offsetTime * (1.0 + normalizedLineIndex)) * mix(minOffsetSpread, maxOffsetSpread, horizontalFade);
+                    float linePosition = getPlasmaY(space.x, horizontalFade, offset);
+                    float line = drawSmoothLine(linePosition, halfWidth, space.y) / 2.0 + drawCrispLine(linePosition, halfWidth * 0.15, space.y);
+                    
+                    // Make circles slightly brighter
+                    float circleX = mod(float(l) + iTime * lineSpeed, 25.0) - 12.0;
+                    vec2 circlePosition = vec2(circleX, getPlasmaY(circleX, horizontalFade, offset));
+                    float circle = drawCircle(circlePosition, 0.01, space) * 2.5;
+                    
+                    line = line + circle;
+                    // Apply fade to make lines visible but still subtle
+                    lines += line * lineColor * rand * 0.7;
+                }
+                
+                fragColor = mix(bgColor1, bgColor2, uv.x);
+                fragColor *= verticalFade;
+                fragColor.a = 1.0;
+                // Debug grid:
+                // fragColor = mix(fragColor, gridColor, drawGrid(space));
+                fragColor += lines;
+                
+                gl_FragColor = fragColor;
+            }
+        `;
+        
+        // Initialize shaders
+        function initShaderProgram(gl, vsSource, fsSource) {
+            const vertexShader = loadShader(gl, gl.VERTEX_SHADER, vsSource);
+            const fragmentShader = loadShader(gl, gl.FRAGMENT_SHADER, fsSource);
+            
+            const shaderProgram = gl.createProgram();
+            gl.attachShader(shaderProgram, vertexShader);
+            gl.attachShader(shaderProgram, fragmentShader);
+            gl.linkProgram(shaderProgram);
+            
+            if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
+                console.error('Unable to initialize the shader program: ' + gl.getProgramInfoLog(shaderProgram));
+                return null;
+            }
+            
+            return shaderProgram;
+        }
+        
+        function loadShader(gl, type, source) {
+            const shader = gl.createShader(type);
+            gl.shaderSource(shader, source);
+            gl.compileShader(shader);
+            
+            if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+                console.error('An error occurred compiling the shaders: ' + gl.getShaderInfoLog(shader));
+                gl.deleteShader(shader);
+                return null;
+            }
+            
+            return shader;
+        }
+        
+        // Create shader program
+        const shaderProgram = initShaderProgram(gl, vsSource, fsSource);
+        
+        // Setup geometry (a quad that fills the screen)
+        const positionBuffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+        const positions = [
+            -1.0, -1.0,
+             1.0, -1.0,
+            -1.0,  1.0,
+             1.0,  1.0,
+        ];
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW);
+        
+        // Setup attributes and uniforms
+        const programInfo = {
+            program: shaderProgram,
+            attribLocations: {
+                vertexPosition: gl.getAttribLocation(shaderProgram, 'aVertexPosition'),
+            },
+            uniformLocations: {
+                resolution: gl.getUniformLocation(shaderProgram, 'iResolution'),
+                time: gl.getUniformLocation(shaderProgram, 'iTime'),
+            },
+        };
+        
+        // Resize canvas to match window size
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            gl.viewport(0, 0, canvas.width, canvas.height);
+        }
+        
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        
+        // Animation loop
+        let startTime = Date.now();
+        function render() {
+            const currentTime = (Date.now() - startTime) / 1000; // time in seconds
+            
+            // Clear the canvas
+            gl.clearColor(0.0, 0.0, 0.0, 1.0);
+            gl.clear(gl.COLOR_BUFFER_BIT);
+            
+            // Use the shader program
+            gl.useProgram(programInfo.program);
+            
+            // Set uniforms
+            gl.uniform2f(programInfo.uniformLocations.resolution, canvas.width, canvas.height);
+            gl.uniform1f(programInfo.uniformLocations.time, currentTime);
+            
+            // Set vertex attributes
+            gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+            gl.vertexAttribPointer(
+                programInfo.attribLocations.vertexPosition,
+                2,         // 2 components per vertex
+                gl.FLOAT,  // the data is 32bit floats
+                false,     // don't normalize
+                0,         // stride
+                0          // offset
+            );
+            gl.enableVertexAttribArray(programInfo.attribLocations.vertexPosition);
+            
+            // Draw the quad
+            gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+            
+            requestAnimationFrame(render);
+        }
+        
+        requestAnimationFrame(render);
+    </script>
+</body>
+</html>
