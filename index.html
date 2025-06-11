@@ -495,6 +495,8 @@
             const float mobileScale = 8.0;
             // Slightly brighter purple/blue with moderate alpha
             const vec4 lineColor = vec4(0.25, 0.15, 0.4, 0.5);
+            const vec4 greenLineColor = vec4(0.15, 0.5, 0.2, 0.6);
+            const vec4 redLineColor = vec4(0.5, 0.15, 0.2, 0.6);
             // Lines are thinner now
             const float minLineWidth = 0.008;
             const float maxLineWidth = 0.12;
@@ -574,7 +576,11 @@
                     
                     line = line + circle;
                     // Apply fade to make lines visible but still subtle
-                    lines += line * lineColor * rand * 0.7;
+                    // Make specific lines colored: green (index 3), red (index 5)
+                    vec4 currentColor = lineColor;
+                    if (l == 3) currentColor = greenLineColor;
+                    else if (l == 5) currentColor = redLineColor;
+                    lines += line * currentColor * rand * 0.7;
                 }
                 
                 fragColor = mix(bgColor1, bgColor2, uv.x);
