@@ -1,0 +1,4 @@
+Contact: alika@alikagraham.com
+Expires: 2026-01-06T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://alikagraham.com/security.txt

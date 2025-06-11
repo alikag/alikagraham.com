@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    
     <!-- SEO Meta Tags -->
     <title>Alika Graham - Entrepreneur, Startup Founder & AI Enthusiast</title>
     <meta name="description" content="Alika Graham is an entrepreneur, startup founder, and AI enthusiast. Founder of impakt labs. Connect with Alika for innovation, product development, and strategic business initiatives.">
@@ -65,7 +71,37 @@
             align-items: center;
             min-height: 100vh;
             min-height: calc(var(--vh, 1vh) * 100);
-            cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHRleHQgeD0iMCIgeT0iMjQiIGZvbnQtc2l6ZT0iMjQiPvCfkYs8L3RleHQ+Cjwvc3ZnPg=='), auto;
+            cursor: none;
+        }
+
+        /* Custom cursor */
+        .cursor-dot {
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: transform 0.15s ease-out;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .cursor-dot.clicking {
+            transform: scale(0.8);
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        /* Hide custom cursor on mobile */
+        @media (hover: none) and (pointer: coarse) {
+            .cursor-dot {
+                display: none;
+            }
+            body {
+                cursor: auto;
+            }
         }
 
         #canvas {
@@ -307,6 +343,7 @@
     </script>
 </head>
 <body>
+    <div class="cursor-dot"></div>
     <canvas id="canvas"></canvas>
     
     <div class="container">
@@ -317,17 +354,55 @@
         </div>
         
         <div class="social-links">
-            <a href="https://www.linkedin.com/in/alikagraham/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/alikagr" target="_blank">GitHub</a>
-            <a href="https://twitter.com/alika_graham" target="_blank">Twitter</a>
-            <a href="https://www.instagram.com/alika.graham/" target="_blank">Instagram</a>
-            <a href="https://impaktlabs.com/" target="_blank">impakt labs</a>
+            <a href="https://www.linkedin.com/in/alikagraham/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/alikagr" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://twitter.com/alika_graham" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="https://www.instagram.com/alika.graham/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://impaktlabs.com/" target="_blank" rel="noopener noreferrer">impakt labs</a>
         </div>
         
         <a href="mailto:alika@alikagraham.com" class="email">alika@alikagraham.com</a>
     </div>
 
     <script>
+        // Custom cursor
+        const cursor = document.querySelector('.cursor-dot');
+        let mouseX = 0;
+        let mouseY = 0;
+        let cursorX = 0;
+        let cursorY = 0;
+        
+        // Check if device has hover capability
+        const hasHover = window.matchMedia('(hover: hover)').matches;
+        
+        if (hasHover) {
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+            
+            document.addEventListener('mousedown', () => {
+                cursor.classList.add('clicking');
+            });
+            
+            document.addEventListener('mouseup', () => {
+                cursor.classList.remove('clicking');
+            });
+            
+            // Smooth cursor animation
+            function animateCursor() {
+                const speed = 0.5;
+                cursorX += (mouseX - cursorX) * speed;
+                cursorY += (mouseY - cursorY) * speed;
+                
+                cursor.style.left = cursorX - 10 + 'px';
+                cursor.style.top = cursorY - 10 + 'px';
+                
+                requestAnimationFrame(animateCursor);
+            }
+            animateCursor();
+        }
+        
         // Typing animation
         const phrases = [
             "Startup Founder",

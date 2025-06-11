@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /images/punk8492-os.jpeg
+
+# Security: Block bad bots
+User-agent: AhrefsBot
+User-agent: SemrushBot
+User-agent: DotBot
+User-agent: MJ12bot
+Disallow: /
+
+Sitemap: https://alikagraham.com/sitemap.xml
