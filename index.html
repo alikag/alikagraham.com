@@ -76,22 +76,34 @@
 
         /* Custom cursor */
         .cursor-dot {
-            width: 20px;
-            height: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border: 2px solid rgba(255, 255, 255, 0.5);
+            width: 32px;
+            height: 32px;
+            background-color: #ffffff;
+            border: 3px solid #000000;
             border-radius: 50%;
             position: fixed;
             pointer-events: none;
             z-index: 9999;
-            mix-blend-mode: difference;
-            transition: transform 0.15s ease-out;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            transition: transform 0.1s ease-out;
+            box-shadow: 0 0 15px #ffffff, 0 0 30px rgba(255, 255, 255, 0.8), inset 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .cursor-dot::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background-color: #000000;
+            border-radius: 50%;
         }
 
         .cursor-dot.clicking {
             transform: scale(0.8);
-            background-color: rgba(255, 255, 255, 1);
+            background-color: #00ffff;
+            border-color: #ffffff;
         }
 
         /* Hide custom cursor on mobile */
@@ -189,6 +201,7 @@
             border: 2px solid transparent;
             border-radius: 30px;
             -webkit-tap-highlight-color: transparent;
+            cursor: none;
         }
 
         .social-links a::before {
@@ -229,6 +242,7 @@
             position: relative;
             padding: 0.5rem;
             -webkit-tap-highlight-color: transparent;
+            cursor: none;
         }
 
         .email:hover {
@@ -395,8 +409,8 @@
                 cursorX += (mouseX - cursorX) * speed;
                 cursorY += (mouseY - cursorY) * speed;
                 
-                cursor.style.left = cursorX - 10 + 'px';
-                cursor.style.top = cursorY - 10 + 'px';
+                cursor.style.left = cursorX - 16 + 'px';
+                cursor.style.top = cursorY - 16 + 'px';
                 
                 requestAnimationFrame(animateCursor);
             }
