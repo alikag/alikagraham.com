@@ -181,8 +181,7 @@
             color: #ffffff;
             text-decoration: none;
             font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
+            transition: color 0.2s ease, border-color 0.2s ease;
             padding: clamp(0.4rem, 2vw, 0.5rem) clamp(0.8rem, 3vw, 1rem);
             border: 2px solid transparent;
             border-radius: 30px;
@@ -190,34 +189,9 @@
             cursor: none;
         }
 
-        .social-links a::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, #00ffff, #ff00ff, #00ffff);
-            border-radius: 30px;
-            opacity: 0;
-            z-index: -1;
-            transition: opacity 0.3s ease;
-            animation: glowRotate 3s linear infinite;
-        }
-
-        @keyframes glowRotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .social-links a:hover::before {
-            opacity: 1;
-        }
-
         .social-links a:hover {
-            transform: translateY(-3px) scale(1.05);
             color: #ffffff;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            border-color: rgba(255, 255, 255, 0.3);
         }
 
         .email {
@@ -233,7 +207,6 @@
 
         .email:hover {
             color: #ffffff;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
         }
 
         @media (max-width: 768px) {
@@ -250,20 +223,13 @@
                 height: 1.2rem;
             }
 
-            /* Simplified hover effects for mobile */
-            .social-links a::before {
-                display: none;
-            }
-
             .social-links a:active {
-                transform: scale(0.95);
                 color: #ffffff;
-                text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+                border-color: rgba(255, 255, 255, 0.3);
             }
 
             .email:active {
                 color: #ffffff;
-                text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
             }
         }
 
@@ -283,17 +249,12 @@
 
         /* Touch device optimizations */
         @media (hover: none) and (pointer: coarse) {
-            .social-links a::before {
-                display: none;
-            }
-
             .social-links a {
                 border: 2px solid rgba(255, 255, 255, 0.2);
             }
 
             .social-links a:active {
-                border-color: rgba(255, 255, 255, 0.5);
-                background: rgba(255, 255, 255, 0.1);
+                border-color: rgba(255, 255, 255, 0.4);
             }
         }
 
