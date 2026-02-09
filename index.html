@@ -12,8 +12,8 @@
     
     <!-- SEO Meta Tags -->
     <title>Alika Graham - Entrepreneur, Startup Founder & AI Enthusiast</title>
-    <meta name="description" content="Alika Graham is an entrepreneur, startup founder, and AI enthusiast. Founder of impakt labs. Connect with Alika for innovation, product development, and strategic business initiatives.">
-    <meta name="keywords" content="Alika Graham, entrepreneur, startup founder, AI enthusiast, product builder, innovation driver, business developer, impakt labs">
+    <meta name="description" content="Alika Graham is an entrepreneur, startup founder, and AI enthusiast. Founder of IMPAKT. Connect with Alika for innovation, product development, and strategic business initiatives.">
+    <meta name="keywords" content="Alika Graham, entrepreneur, startup founder, AI enthusiast, product builder, innovation driver, business developer, IMPAKT">
     <meta name="author" content="Alika Graham">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://alikagraham.com/">
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://alikagraham.com/">
     <meta property="og:title" content="Alika Graham - Entrepreneur, Startup Founder & AI Enthusiast">
-    <meta property="og:description" content="Alika Graham is an entrepreneur, startup founder, and AI enthusiast. Founder of impakt labs. Connect with Alika for innovation, product development, and strategic business initiatives.">
+    <meta property="og:description" content="Alika Graham is an entrepreneur, startup founder, and AI enthusiast. Founder of IMPAKT. Connect with Alika for innovation, product development, and strategic business initiatives.">
     <meta property="og:image" content="https://alikagraham.com/images/punk8492-os.jpeg">
     <meta property="og:site_name" content="Alika Graham">
     
@@ -30,7 +30,7 @@
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://alikagraham.com/">
     <meta property="twitter:title" content="Alika Graham - Entrepreneur, Startup Founder & AI Enthusiast">
-    <meta property="twitter:description" content="Alika Graham is an entrepreneur, startup founder, and AI enthusiast. Founder of impakt labs. Connect with Alika for innovation, product development, and strategic business initiatives.">
+    <meta property="twitter:description" content="Alika Graham is an entrepreneur, startup founder, and AI enthusiast. Founder of IMPAKT. Connect with Alika for innovation, product development, and strategic business initiatives.">
     <meta property="twitter:image" content="https://alikagraham.com/images/punk8492-os.jpeg">
     <meta property="twitter:site" content="@alikagraham">
     <meta property="twitter:creator" content="@alikagraham">
@@ -76,34 +76,20 @@
 
         /* Custom cursor */
         .cursor-dot {
-            width: 32px;
-            height: 32px;
+            width: 10px;
+            height: 10px;
             background-color: #ffffff;
-            border: 3px solid #000000;
             border-radius: 50%;
             position: fixed;
             pointer-events: none;
             z-index: 9999;
-            transition: transform 0.1s ease-out;
-            box-shadow: 0 0 15px #ffffff, 0 0 30px rgba(255, 255, 255, 0.8), inset 0 0 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .cursor-dot::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 8px;
-            height: 8px;
-            background-color: #000000;
-            border-radius: 50%;
+            transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+            opacity: 0.85;
         }
 
         .cursor-dot.clicking {
-            transform: scale(0.8);
-            background-color: #ffff00;
-            border-color: #ffffff;
+            transform: scale(0.7);
+            opacity: 1;
         }
 
         /* Hide custom cursor on mobile */
@@ -347,7 +333,7 @@
         "jobTitle": "Entrepreneur",
         "worksFor": {
             "@type": "Organization",
-            "name": "impakt labs",
+            "name": "IMPAKT",
             "url": "https://impaktlabs.com/"
         },
         "description": "Entrepreneur, startup founder, and AI enthusiast focused on innovation and product development.",
@@ -372,7 +358,7 @@
             <a href="https://github.com/alikag" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href="https://x.com/alikagraham" target="_blank" rel="noopener noreferrer">X</a>
             <a href="https://instagram.com/alikagraham" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="https://impaktlabs.com/" target="_blank" rel="noopener noreferrer">impakt labs</a>
+            <a href="https://impaktlabs.com/" target="_blank" rel="noopener noreferrer">IMPAKT</a>
         </div>
         
         <a href="mailto:alika@alikagraham.com" class="email">alika@alikagraham.com</a>
@@ -409,8 +395,8 @@
                 cursorX += (mouseX - cursorX) * speed;
                 cursorY += (mouseY - cursorY) * speed;
                 
-                cursor.style.left = cursorX - 16 + 'px';
-                cursor.style.top = cursorY - 16 + 'px';
+                cursor.style.left = cursorX - 5 + 'px';
+                cursor.style.top = cursorY - 5 + 'px';
                 
                 requestAnimationFrame(animateCursor);
             }
