@@ -11,30 +11,43 @@
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
 
     <!-- SEO -->
-    <title>Alika Graham — Investor, Operator &amp; Founder of IMPAKT</title>
-    <meta name="description" content="Alika Graham is an investor and holdco operator building a portfolio of operator-led service businesses and AI infrastructure under IMPAKT — Pink's Windows, East Bench Overlook, and Instant SDR.">
-    <meta name="keywords" content="Alika Graham, IMPAKT, IMPAKT Labs, holdco, holding company, investor, franchise owner, Pink's Windows, East Bench Overlook, Instant SDR, AI, entrepreneur, founder, New York">
+    <title>Alika Graham · Investor, Operator, Founder of IMPAKT</title>
+    <meta name="description" content="Alika Graham is an investor and holdco operator building a portfolio of operator-led service businesses and AI infrastructure under IMPAKT. Operating Pink's Windows, East Bench Overlook, and Instant SDR across New York, Florida, and Montana.">
+    <meta name="keywords" content="Alika Graham, IMPAKT, IMPAKT Labs, holdco, holding company, investor, operator, franchise owner, Pink's Windows, East Bench Overlook, Instant SDR, AI sales development, AI infrastructure, entrepreneur, founder, New York, NYU">
     <meta name="author" content="Alika Graham">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="geo.region" content="US-NY">
+    <meta name="geo.placename" content="New York">
     <link rel="canonical" href="https://alikagraham.com/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="profile">
     <meta property="og:url" content="https://alikagraham.com/">
-    <meta property="og:title" content="Alika Graham — Investor, Operator &amp; Founder of IMPAKT">
+    <meta property="og:title" content="Alika Graham · Investor, Operator, Founder of IMPAKT">
     <meta property="og:description" content="Building a portfolio of operator-led service businesses and AI infrastructure under IMPAKT.">
-    <meta property="og:image" content="https://alikagraham.com/favicon.svg">
+    <meta property="og:image" content="https://alikagraham.com/og-image.png">
+    <meta property="og:image:secure_url" content="https://alikagraham.com/og-image.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Alika Graham. Investor and operator. Founder of IMPAKT.">
     <meta property="og:site_name" content="Alika Graham">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Legacy thumbnail for clients that ignore OG -->
+    <link rel="image_src" href="https://alikagraham.com/og-image.png">
     <meta property="profile:first_name" content="Alika">
     <meta property="profile:last_name" content="Graham">
     <meta property="profile:username" content="alikagraham">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary">
+    <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://alikagraham.com/">
-    <meta property="twitter:title" content="Alika Graham — Investor, Operator &amp; Founder of IMPAKT">
+    <meta property="twitter:title" content="Alika Graham · Investor, Operator, Founder of IMPAKT">
     <meta property="twitter:description" content="Building a portfolio of operator-led service businesses and AI infrastructure under IMPAKT.">
-    <meta property="twitter:image" content="https://alikagraham.com/favicon.svg">
+    <meta property="twitter:image" content="https://alikagraham.com/og-image.png">
+    <meta property="twitter:image:alt" content="Alika Graham. Investor and operator. Founder of IMPAKT.">
     <meta property="twitter:site" content="@alikagraham">
     <meta property="twitter:creator" content="@alikagraham">
 
@@ -45,9 +58,12 @@
     <meta name="theme-color" content="#0a0a0a">
     <meta name="color-scheme" content="dark">
 
-    <!-- Icons -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="apple-touch-icon" href="/favicon.svg">
+    <!-- Icons (cache-busted v3) -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=3">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3">
+    <link rel="shortcut icon" href="/favicon.ico?v=3">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -724,7 +740,7 @@
             .connect-list a:hover { transform: none; }
         }
 
-        /* Small phones — fine-tune typography & spacing */
+        /* Small phones: fine-tune typography and spacing */
         @media (max-width: 480px) {
             h1.display { font-size: clamp(2.6rem, 14vw, 4rem); line-height: 0.98; }
             .lede { font-size: 1.05rem; }
@@ -786,7 +802,7 @@
                 "@id": "https://alikagraham.com/#website",
                 "url": "https://alikagraham.com/",
                 "name": "Alika Graham",
-                "description": "Personal site of Alika Graham — investor, operator, and founder of IMPAKT.",
+                "description": "Personal site of Alika Graham. Investor, operator, and founder of IMPAKT.",
                 "publisher": { "@id": "https://alikagraham.com/#person" },
                 "inLanguage": "en"
             },
@@ -794,11 +810,76 @@
                 "@type": "ProfilePage",
                 "@id": "https://alikagraham.com/#profilepage",
                 "url": "https://alikagraham.com/",
-                "name": "Alika Graham — Profile",
+                "name": "Alika Graham · Profile",
                 "about": { "@id": "https://alikagraham.com/#person" },
                 "mainEntity": { "@id": "https://alikagraham.com/#person" },
                 "isPartOf": { "@id": "https://alikagraham.com/#website" },
+                "primaryImageOfPage": {
+                    "@type": "ImageObject",
+                    "url": "https://alikagraham.com/og-image.png",
+                    "width": 1200,
+                    "height": 630
+                },
                 "inLanguage": "en"
+            },
+            {
+                "@type": "Organization",
+                "@id": "https://impaktlabs.com/#organization",
+                "name": "IMPAKT",
+                "alternateName": "IMPAKT Labs",
+                "url": "https://impaktlabs.com/",
+                "founder": { "@id": "https://alikagraham.com/#person" },
+                "foundingDate": "2012",
+                "foundingLocation": "New York, NY",
+                "description": "Holding company for operator-led service businesses and the shared AI/CRM stack that runs them."
+            },
+            {
+                "@type": "ItemList",
+                "name": "Ventures",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                            "@type": "Organization",
+                            "name": "IMPAKT",
+                            "url": "https://impaktlabs.com/",
+                            "description": "Holding company for operator-led service businesses and shared AI/CRM stack."
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                            "@type": "LocalBusiness",
+                            "name": "Pink's Windows (Hudson Valley & Palm Beach)",
+                            "url": "https://www.pinkswindows.com/",
+                            "description": "ResiBrands franchise. Window cleaning, pressure washing, and exterior services across the Hudson Valley and Palm Beach.",
+                            "areaServed": ["Hudson Valley, NY", "Palm Beach, FL"]
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                            "@type": "Place",
+                            "name": "East Bench Overlook",
+                            "description": "Premium residential homesites above Red Lodge, Montana.",
+                            "address": { "@type": "PostalAddress", "addressLocality": "Red Lodge", "addressRegion": "MT", "addressCountry": "US" }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {
+                            "@type": "SoftwareApplication",
+                            "name": "Instant SDR",
+                            "url": "https://instantsdr.ai/",
+                            "applicationCategory": "BusinessApplication",
+                            "description": "AI Sales Development platform combining intent data, verified contacts, and automated outbound."
+                        }
+                    }
+                ]
             }
         ]
     }
@@ -812,7 +893,7 @@
 
     <header class="site-nav" id="siteNav">
         <div class="wrap">
-            <a href="#" class="brand" aria-label="Alika Graham — home">AG</a>
+            <a href="#" class="brand" aria-label="Alika Graham · home">AG</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#ventures">Ventures</a></li>
@@ -853,7 +934,7 @@
         <section id="about" class="section">
             <div class="wrap">
                 <div class="section-header reveal">
-                    <h2>About <em>—</em></h2>
+                    <h2>About <em>/</em></h2>
                     <span class="section-num">01 / About</span>
                 </div>
                 <div class="about-grid">
@@ -864,7 +945,7 @@
                         </div>
                         <div>
                             <dt>Education</dt>
-                            <dd>NYU — Economics</dd>
+                            <dd>NYU, Economics</dd>
                         </div>
                         <div>
                             <dt>Previously</dt>
@@ -877,7 +958,7 @@
                     </dl>
                     <div class="about-prose reveal">
                         <p>I'm an investor and operator building a portfolio of service businesses under <strong>IMPAKT</strong>. I like messy problems, durable businesses, and small teams doing real work.</p>
-                        <p>Today that means <strong>Pink's Windows</strong> across the Hudson Valley and Palm Beach, <strong>East Bench Overlook</strong> — a residential land development in Montana, and <strong>Instant SDR</strong>, an AI-powered sales development platform. Each one has its own manager on the ground. My job is capital, systems, and the long view.</p>
+                        <p>Today that means <strong>Pink's Windows</strong> across the Hudson Valley and Palm Beach, <strong>East Bench Overlook</strong>, a residential land development in Montana, and <strong>Instant SDR</strong>, an AI-powered sales development platform. Each one has its own manager on the ground. My job is capital, systems, and the long view.</p>
                         <p>My background is data and analytics. I was a partner at impakt Advisors, which we sold to Croud in 2021. That shapes how I run things now: I build the internal tooling, CRM automations, and AI infrastructure that let operator-led businesses punch above their weight.</p>
                     </div>
                 </div>
@@ -887,7 +968,7 @@
         <section id="ventures" class="section">
             <div class="wrap">
                 <div class="section-header reveal">
-                    <h2>Ventures <em>—</em></h2>
+                    <h2>Ventures <em>/</em></h2>
                     <span class="section-num">02 / Ventures</span>
                 </div>
                 <div class="ventures-grid">
@@ -925,7 +1006,7 @@
         <section id="connect" class="section">
             <div class="wrap">
                 <div class="section-header reveal">
-                    <h2>Connect <em>—</em></h2>
+                    <h2>Connect <em>/</em></h2>
                     <span class="section-num">03 / Connect</span>
                 </div>
                 <div class="connect-grid">
@@ -1018,7 +1099,7 @@
         const phrases = [
             'Investor & Holdco Operator',
             'Founder, IMPAKT Labs',
-            'Franchise Owner — Pink’s Windows',
+            'Franchise Owner, Pink’s Windows',
             'Builder of operator-led businesses',
             'AI infrastructure, applied'
         ];
