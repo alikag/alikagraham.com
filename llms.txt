@@ -19,7 +19,7 @@ IMPAKT is the holding company. Each portfolio business has its own on-the-ground
 - [IMPAKT (impaktlabs.com)](https://impaktlabs.com/): Holding company since 2012. Operates portfolio businesses and the shared AI/CRM stack that runs them. Originally parent of impakt Advisors (sold to Croud, Dec 2021).
 - [Pink's Windows, Hudson Valley](https://www.pinkswindows.com/): ResiBrands franchise covering Westchester, Putnam, and Ulster counties (50+ zip codes), launched March 2025. Window cleaning, pressure washing, soft wash, gutter cleaning, solar panel cleaning. Awarded Newcomers of the Year at ResiCon 2025.
 - [Pink's Windows, Palm Beach](https://www.pinkswindows.com/): ResiBrands franchise covering an 11-city territory from Palm Beach Island to Boynton Beach, launched November 2025. Operating as PalmPakt LLC.
-- East Bench Overlook: Premium residential subdivision above Red Lodge, Montana. Phased buildout; Phase 1 infrastructure complete.
+- [East Bench Overlook (eastbenchoverlook.com)](https://eastbenchoverlook.com/): Premium residential subdivision above Red Lodge, Montana. Phased buildout; Phase 1 infrastructure complete.
 - [Instant SDR (instantsdr.ai)](https://instantsdr.ai/): AI Sales Development Rep platform combining intent data (5,000+ sources including Bombora and G2), verified contact enrichment, and AI-driven outbound to help agencies and B2B teams book meetings without growing headcount.
 
 ## Contact
